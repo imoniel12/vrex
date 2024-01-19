@@ -1,0 +1,104 @@
+{% extends 'vrexApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Student Financial Assistance</h2>
+
+                <p class="lead">We understand the importance of supporting students in their academic journey. Explore opportunities for financial assistance to help you achieve your educational goals.</p>
+
+                <form method="post" action="{% url 'formrequest' %}" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">Apply for Assistance</button>
+                    </div>
+                </form>
+
+                <div class="mt-4">
+                    <a href="{% url 'announcement' %}" class="btn btn-secondary btn-lg">
+                        Explore Announcements
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <style>
+        /* financial */
+        .box-wrapper h5 {
+          color: #820000;
+          margin-top: 0;
+        }
+      
+        .box-wrapper .check {
+          color: #4CAF50;
+        }
+      
+        .box-wrapper ul {
+          list-style: none;
+          padding-left: 0;
+        }
+      
+        .box-wrapper {
+          margin-bottom: 15px;
+          padding: 15px;
+          background-color: #FAECD6;
+        }
+      </style>
+    <div class="container">
+
+        <!-- div 1 - col1 -->
+        <div class="box-wrapper" style="background-color: #FAECD6;">
+          <h5>REQUIREMENTS</h5>
+          <ul>
+            <li><span class="check">&#x2705;</span> Financial Assistance Application Form (available at the Registrar’s
+              Office)</li>
+            <li><span class="check">&#x2705;</span> Certification from Class Adviser that student has a grade of 85% and above
+              last school year</li>
+            <li><span class="check">&#x2705;</span> Copy of Voter’s ID/updated voter’s certification of parents/legal guardian
+            </li>
+            <li><span class="check">&#x2705;</span> Certification from the Punong Barangay that the applicant belongs to a poor
+              or indigent family</li>
+            <li><span class="check">&#x2705;</span> Certificate of No Income Tax Return of parents or legal guardian; and</li>
+            <li><span class="check">&#x2705;</span> Letter of intent from the applicant attested by the parents/legal guardian
+            </li>
+            <li><span class="check">&#x2705;</span> Sketch of the home address for verification purposes (Reference point from
+              ValMaSci</li>
+            <li><span class="check">&#x2705;</span> Certificate of Indigency (c/o CSWD)</li>
+          </ul>
+        </div>
+    
+        <!-- div 2 - col2 top -->
+        <div class="box-wrapper" style="background-color: #FAECD6;">
+          <h5>APPLICATION PROCEDURE</h5>
+          <ol>
+            <li><span class="check">&#x2705;</span> Accomplish and submit to the Registrar's Office the Financial Assistance
+              Application Form together with the following requirements on September 18 to September 29, 2023:
+              <ul>
+                <li>Certification from Class Adviser that student has a grade of 85% and above last school year;</li>
+                <li>Copy of Voter's ID of parents/ legal guardian;</li>
+                <li>Certification from the Punong Barangay that the applicant belongs to a poor or indigent family;</li>
+                <li>Certificate of No Income Tax Return of parents or legal guardian; and</li>
+                <li>Letter of intent from the applicant attested by the parent/legal guardian</li>
+              </ul>
+            </li>
+            <li><span class="check">&#x2705;</span> The personnel will check and verify the completeness of the requirements
+              submitted;</li>
+            <li><span class="check">&#x2705;</span> The Screening Committee shall determine the eligibility of the student
+              applicant; and</li>
+            <li><span class="check">&#x2705;</span> The student who shall qualify for financial grant will be notified in writing
+              by the Screening Committee.</li>
+          </ol>
+        </div>
+    
+        <!-- div 2 - col2 bot -->
+        <div class="box-wrapper" style="background-color: #FAECD6;">
+          <h5>IMPORTANT DATES TO REMEMBER</h5>
+          <ul>
+            <p> Period of Application: September 18 - 29, 2023<br> CSWD Validation and Background Check: October 2 - 13, 2023<br>Posting of Results: October 18, 2023
+          </ul>
+        </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'vrexApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg" style="border-radius: 15px; background-color: #F4F4F4;">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4" style="color: #820000; text-transform: uppercase; text-shadow: 2px 2px 4px #ffffff;">Form Request</h2>
+
+                        <form method="post" action="{% url 'formrequest' %}" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            {{ form|crispy }}   
+                            
+                            <div class="text-center mt-4">
+                                <button type="button" onclick="validateForm()" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var dropdownUserType = document.getElementsByName('user_type')[0];
+            var dropdownRequestForm = document.getElementsByName('requestform')[0];
+
+            if (dropdownUserType.options[dropdownUserType.selectedIndex].value === "Choose User Type" || dropdownRequestForm.options[dropdownRequestForm.selectedIndex].value === "What are you requesting") {
+                alert("Please select a valid option in the dropdown.");
+                return false;
+            }
+
+            // If the validation passes, submit the form
+            document.forms[0].submit();  // Assumes it's the first form on the page; adjust as needed
+        }
+    </script>
+
+{% endblock %}

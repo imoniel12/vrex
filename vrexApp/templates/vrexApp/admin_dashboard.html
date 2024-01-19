@@ -1,0 +1,25 @@
+<!-- admin_dashboard.html -->
+
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-3">
+    <h2>Dashboard</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Total Number of SchoolForm Requests
+          </div>
+          <div class="card-body">
+            <canvas id="totalRequestsChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Add other charts here -->
+    </div>
+  </div>
+
+  <script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="documentRequestsChart" width="400" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'static/admin/js/jquery.js' %}"></script>
+  <script src="{% static 'static/admin/js/core.js' %}"></script>
+  <script src="{% static 'static/admin/js/admin.js' %}"></script>
+  <script src="{% static 'static/admin/js/vendor/chartjs/Chart.min.js' %}"></script>
+  <script src="{% static 'static/js/app.js' %}"></script>  <!-- Include the new JavaScript file here -->
+{% endblock %}

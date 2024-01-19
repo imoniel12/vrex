@@ -1,0 +1,51 @@
+{% extends 'vrexApp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <body>
+        <div class="container bg-light shadow-md p-5 form-layout">
+            <h3> Login to your account </h3>
+            <hr>
+            <br>
+            <form method="POST" autocomplete="off" id="loginForm">
+                {% csrf_token %}
+                {{form.username|as_crispy_field}}
+                <br>
+                {{form.password|as_crispy_field}}
+                <br>
+                <button type="submit" class="btn btn-primary w-100 btn-block p-2"> Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i> </button>
+            </form>
+            <br>
+            <div class="text-center">
+                <p> Don't have an account? </p> <a href="{% url 'register' %}"> Register </a>
+            </div>
+        </div>
+        <br>
+
+        <!-- Notification container -->
+        <div id="notification-container" class="text-center mt-3"></div>
+
+        <!-- JavaScript for login result messages -->
+        <script>
+            // Get the query parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const loginResult = urlParams.get('login_result');
+
+            // Function to display notification messages
+            const showNotification = (message, type) => {
+                const notificationContainer = document.getElementById('notification-container');
+                const notification = document.createElement('div');
+                notification.className = `alert alert-${type}`;
+                notification.textContent = message;
+                notificationContainer.appendChild(notification);
+            };
+
+            // Check if there is a login result and display the appropriate message
+            if (loginResult === 'invalid') {
+                showNotification('Invalid credentials. Please try again.', 'danger');
+            } else if (loginResult === 'success') {
+                showNotification('Login successful. Welcome!', 'success');
+            }
+        </script>
+    </body>
+{% endblock %}

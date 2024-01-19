@@ -1,0 +1,110 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary2 justify-content-center navbar-main">
+
+  {% if user.is_authenticated %}
+      <!-- User is authenticated, disable the link -->
+      <span class="navbar-brand main-heading"> 
+          &nbsp; VCSMS REGISTRAR
+      </span>
+  {% else %}
+  <!-- User is not authenticated, enable the link -->
+    <a class="navbar-brand main-heading " href="{% url '' %}"> 
+        &nbsp; VCSMS REGISTRAR
+    </a>
+  {% endif %}
+
+  
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavSidebar"
+      aria-controls="navbarNavSidebar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+  
+    </button>
+  
+  
+      <div class="collapse navbar-collapse text-center" id="navbarNavSidebar">
+  
+        
+        <ul class="navbar-nav mr-auto">
+  
+  
+          &nbsp;     &nbsp;     &nbsp; 
+  
+          {% if user.is_authenticated %}
+
+          
+            <li class="nav-item">
+        
+              <a class="nav-link" href="{% url 'announcement' %}">Announcement &nbsp; <i class="fa fa-announcement" aria-hidden="true"></i> </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'financial' %}">Financial Assistance &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'formrequest' %}">School Forms Request &nbsp; <i class="fa fa-formrequest" aria-hidden="true"></i> </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'checkstatus' %}">Check Request Status &nbsp; <i class="fa fa-checkstatus" aria-hidden="true"></i> </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'chat' %}">Chat &nbsp; <i class="fa fa-chat" aria-hidden="true"></i> </a>
+            </li>
+            
+            <li class="nav-item"></li>
+              <a class="nav-link" href="{% url 'calendar' %}">Calendar &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i> </a>
+            </li>
+  
+            &nbsp;     &nbsp;     &nbsp; 
+  
+  
+            <li class="nav-item">
+  
+              <a class="nav-link" href="{% url 'logout' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+  
+            </li>
+  
+  
+        </ul>
+  
+        {% else %}
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'register' %}"> Register </a>
+  
+        </li>
+  
+  
+        &nbsp;     &nbsp;     &nbsp; 
+  
+  
+        <li class="nav-item">
+  
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+  
+        </li>
+        
+
+  
+        {% endif %}
+
+        
+      
+        
+      </div>
+  
+  
+  </nav>
+
+
+

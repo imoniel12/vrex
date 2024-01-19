@@ -1,0 +1,68 @@
+.form-layout{
+ 
+    border-radius:  15px;
+    width: 500px;
+}
+
+
+.bg-primary2,.navbar, .main-sidebar {
+   
+    background-color: rgba(130, 0, 0, 1);
+}
+
+.bg {
+    /* --bs-bg-opacity: 1;
+    background-color: rgba(130, 0, 0, .4); */
+    background-image: url('/static/images/valma.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/* #admin */
+.navbar, .main-sidebar {
+   
+    background-color: rgba(130, 0, 0, 1);
+}
+
+.body {
+    font-family: 'Gotham', "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+.content-wrapper, .chart_dashboard {
+    background-color: rgba(250, 236, 214, 1); 
+}
+
+
+.card {
+    background-color: rgba(244, 244, 244, 1); 
+
+}
+
+/* calendar */
+
+    /* Add your custom styles here */
+    #calendar {
+        background-color: #FAECD6;
+    }
+
+    #calendar th {
+        background-color: #FFDAB9; 
+    }
+
+    #calendar td {
+        background-color: #FFF8DC; 
+        text-align: center;
+        padding: 10px;
+    }
+
+    #calendar .current-month {
+        font-weight: bold;
+    }
+
+    #calendar .today {
+        background-color: #FF6347; 
+        font-weight: bold;
+    }
